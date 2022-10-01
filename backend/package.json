@@ -1,0 +1,33 @@
+{
+  "name": "ibs-backend",
+  "version": "1.0.0",
+  "description": "Backend van het Invictus bier systeem",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "run": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astronautilus14/ibs.git"
+  },
+  "keywords": [
+    "invictus"
+  ],
+  "author": "Naut de Vroome",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/astronautilus14/ibs/issues"
+  },
+  "homepage": "https://github.com/astronautilus14/ibs#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.20"
+  }
+}
