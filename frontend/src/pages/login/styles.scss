@@ -1,0 +1,64 @@
+@import "../../main.scss";
+
+.login {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background-image: url(../../assets/yesmore-content-0wElfttgYbM-unsplash.jpg);
+   background-size: cover;
+
+   .box {
+      width: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: left;
+      flex-direction: column;
+      background-color: $light;
+      border-radius: 10px;
+      padding: 40px;
+      width: 25rem;
+
+      form {
+         display: flex;
+         flex-direction: column;
+         margin-top: 40px;
+         gap: 20px;
+      }
+
+      input {
+         background: none;
+         border: none;
+         border-bottom: 2px solid $dark;
+         outline: none;
+         transition: all 0.5s linear;
+
+         &:focus {
+            border-bottom: 2px solid $red;
+         }
+         
+         ::placeholder {
+            color: rgb(138, 156, 198);
+         }
+
+         &[type="submit"] {
+            background-color: $dark;
+            border: none;
+
+            &:hover {
+               background-color: $red;
+            }
+         }
+      }
+
+      .error {
+         background-color: $red;
+         border-radius: 10px;
+         max-width: 100%;
+         padding: 10px;
+         color: white;
+         margin-top: 20px;
+      }
+   }
+}
+

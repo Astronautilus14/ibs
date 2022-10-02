@@ -2,11 +2,12 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const db_conn = require('./database');
+const cors = require('cors');
 
-// dotenv.config();
+dotenv.config();
 
 // Import routes
-const { auth, verify } = require('./routes/auth');
+const { auth } = require('./routes/auth');
 
 // Database
 function connect_db() {
@@ -19,6 +20,7 @@ function connect_db() {
 connect_db();
 
 // Middlewares
+app.use(cors());
 app.use(express.json());
 
 app.use('/auth', auth);
