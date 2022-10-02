@@ -14,7 +14,7 @@ input[type=submit], button {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background-color: rgb(13, 0, 55);
+  background-color: #010a4b;
   color: white;
   font-size: 1rem;
   border: none;
@@ -45,7 +45,7 @@ input[type=submit]:hover, button:hover {
   max-width: 25rem;
   border-radius: 10px;
   padding: 10px;
-  color: rgb(13, 0, 55);
+  color: #010a4b;
   margin-top: 20px;
 }
 .changepassword .error {

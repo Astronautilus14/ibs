@@ -10,10 +10,11 @@
 }
 
 input[type=submit], button {
+  box-shadow: none;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background-color: rgb(13, 0, 55);
+  background-color: #010a4b;
   color: white;
   font-size: 1rem;
   border: none;
@@ -27,27 +28,37 @@ input[type=submit]:hover, button:hover {
   background-color: rgb(149, 5, 5);
 }
 
-.register {
+.admin {
   display: flex;
   flex-direction: column;
   padding: 20px;
   gap: 20px;
 }
-.register form {
+.admin form {
   display: flex;
   flex-direction: column;
+  align-items: left;
   gap: 10px;
   width: 25rem;
 }
-.register .result {
+.admin form input[type=checkbox] {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.admin form span {
+  display: flex;
+  gap: 5px;
+}
+.admin .result {
   background-color: limegreen;
   max-width: 25rem;
   border-radius: 10px;
   padding: 10px;
-  color: rgb(13, 0, 55);
+  color: #010a4b;
   margin-top: 20px;
 }
-.register .error {
+.admin .error {
   background-color: rgb(149, 5, 5) !important;
   color: white !important;
 }/*# sourceMappingURL=styles.css.map */

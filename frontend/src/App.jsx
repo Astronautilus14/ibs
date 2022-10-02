@@ -1,25 +1,29 @@
 import Login from './pages/login/Login';
-import Register from './pages/register/Register';
+import Admin from './pages/admin/Admin';
 import Changepassword from './pages/changepassword/Changepassword';
+import Nav from './components/Nav';
 import { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export default function App() {
-  const [ page, setPage ] = useState('login');
+  const [ isLoggedIn, setIsLoggedIn ] = useState(false);
+  const [ isAdmin, setIsAdmin ] = useState(false);
 
   useEffect( _ => {
-    if (sessionStorage.hasOwnProperty('token')) return setPage('home');
+    if (sessionStorage.hasOwnProperty('token')) setIsLoggedIn(true);
+    if (sessionStorage.hasOwnProperty('is-admin')) setIsAdmin(true);
   }, [])
 
-  switch (page) {
-    case 'login':
-      return <Login setPage={setPage} />
-    case 'home':
-      return <Changepassword setPage={setPage} />
-    case 'register':
-      return <Register setPage={setPage} />
-    case 'changepassword':
-      return <Changepassword setPage={setPage} />
-    default:
-      return <Login setPage={setPage} />
-  }
+  if (!isLoggedIn) return <Login setIsLoggedIn={setIsLoggedIn} setIsAdmin={setIsAdmin} />;
+
+  return (
+    <BrowserRouter>
+      <Nav setIsLoggedIn={setIsLoggedIn} isAdmin={isAdmin} setIsAdmin={setIsAdmin} />
+      <Routes>
+        <Route exact path="/" element={<Admin />} />
+        <Route exact path="/admin" element={<Admin />} />
+        <Route exact path="/wachtwoordwijzigen" element={<Changepassword />} /> 
+      </Routes>
+    </BrowserRouter>
+  );
 }

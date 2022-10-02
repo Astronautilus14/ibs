@@ -2,7 +2,7 @@ import config from '../../config.json';
 import { useState } from 'react';
 import styles from './styles.css';
 
-export default function Login({ setPage }) {
+export default function Login({ setIsLoggedIn , setIsAdmin }) {
    const [ error, setError ] = useState({
       isError: false,
       message: ''
@@ -28,7 +28,11 @@ export default function Login({ setPage }) {
          if (res.status === 200) {
             res.json().then( data => {
                sessionStorage.setItem('token', data.token);
-               setPage('home');
+               if (data.isAdmin) {
+                  sessionStorage.setItem('is-admin', 1);
+                  setIsAdmin(true);
+               }
+               setIsLoggedIn(true);
             });
          } else {
             res.json().then( data => {

@@ -14,7 +14,7 @@ input[type=submit], button {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background-color: rgb(13, 0, 55);
+  background-color: #010a4b;
   color: white;
   font-size: 1rem;
   border: none;
@@ -58,7 +58,7 @@ input[type=submit]:hover, button:hover {
 .login .box input {
   background: none;
   border: none;
-  border-bottom: 2px solid rgb(13, 0, 55);
+  border-bottom: 2px solid #010a4b;
   outline: none;
   transition: all 0.5s linear;
 }
@@ -75,7 +75,7 @@ input[type=submit]:hover, button:hover {
   color: rgb(138, 156, 198);
 }
 .login .box input[type=submit] {
-  background-color: rgb(13, 0, 55);
+  background-color: #010a4b;
   border: none;
 }
 .login .box input[type=submit]:hover {

@@ -1,6 +1,6 @@
 @import "../../main.scss";
 
-.register {
+.admin {
    display: flex;
    flex-direction: column;
    padding: 20px;
@@ -9,8 +9,18 @@
    form {
       display: flex;
       flex-direction: column;
+      align-items: left;
       gap: 10px;
       width: 25rem;
+
+      input[type="checkbox"] {
+         width: fit-content;
+      }
+
+      span {
+         display: flex;
+         gap: 5px;
+      }
    }
 
    .result {
